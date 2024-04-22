@@ -1,0 +1,73 @@
+####FEDORA CORIOLIS INSTALL
+#THIS IS NOT A SCRIPT JUS A GUIDE
+#Enable the RPM Fusion repository if you haven't already done so. 
+#RPM Fusion provides additional packages that are not included in the official Fedora repositories:
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf update
+
+
+#1#install requirements
+sudo yum install -y git cmake bison flex gcc-c++ libstdc++-devel  \
+                              binutils-devel tcl-devel          \
+                              boost-devel boost-python3 boost-filesystem     \
+                              boost-regex  boost-wave libtool motif-devel   \
+                              python-devel libxml2-devel bzip2-devel \
+                              qt-devel doxygen automake libXpm-devel\
+#2#QWT packages
+sudo  yum install -y qt5-qtbase-devel qt5-qtsvg-devel              # Qt 5.
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-doc-6.1.2-4.fc23.noarch.rpm\
+https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-6.1.2-4.fc23.x86_64.rpm\
+https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-devel-6.1.2-4.fc23.x86_64.rpm\
+https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-devel-6.1.2-4.fc23.x86_64.rpm\
+https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-6.1.2-4.fc23.x86_64.rpm\
+
+
+#3#RAPIDJSON
+#Install the unpackaged prerequisites. Currently, only RapidJSON.
+#rapidJSON direct link:
+http://github.com/miloyip/rapidjson
+mkdir -p ~/coriolis-2.x/src/support
+cd ~/coriolis-2.x/src/support
+git clone http://github.com/miloyip/rapidjson
+
+
+#4#YOSYS
+sudo yum install -y yosys
+#start yosys with:
+yoys
+
+#5#coriolis install
+mkdir -p ~/coriolis-2.x/src
+cd ~/coriolis-2.x/src
+git clone https://github.com/Coloquinte/Coriolis.git
+git clone https://github.com/lip6/alliance.git
+git clone https://github.com/lip6/alliance-check-toolkit.git
+yum install alliance alliance-libs alliance-doc
+export PATH=/usr/lib/ccache:"$PATH"
+export DISPLAY=:0.0
+
+cd ~/coriolis-2.x/src/coriolis
+#run the shell script
+./shell
+
+
+
+#6##alliance install 
+mkdir -p alliance/build alliance/install
+cd ~/alliance
+git clone https://gitlab.lip6.fr/vlsi-eda/alliance.git
+mv alliance/alliance/src alliance
+rm -rf alliance/alliance
+cd alliance/src
+./autostuff
+cd ~/alliance/build
+export ALLIANCE_TOP=$HOME/alliance/install
+export LD_LIBRARY_PATH=${ALLIANCE_TOP}/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${ALLIANCE_TOP}/lib64:${LD_LIBRARY_PATH}
+../alliance/src/configure --prefix=$ALLIANCE_TOP --enable-alc-shared
+make -j1 install
+
+
+##the compilation should return no errors
+#run the single_command.py attached
+python3 single_command.py
