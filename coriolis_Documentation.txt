@@ -1,0 +1,8 @@
+If you are wondering how ALLIANCE and CORIOLIS are different,well the difference is only the developer
+
+
+Alliance came first in terms of development. It was developed by the ASIM team at LIP6 (Laboratoire d'Informatique de Paris 6) before Coriolis. Alliance has been around for a longer period and has been widely used in academic and research environments, particularly in France and other European countries. Coriolis, developed by CNRS (French National Center for Scientific Research), came later and offers similar functionality but with a focus on flexibility and customizability, making it suitable for research purposes and educational use. 
+
+
+
+In terms of executables they have the same number of executables so you can use any in VLSI
