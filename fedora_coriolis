@@ -47,12 +47,24 @@ export PATH=/usr/lib/ccache:"$PATH"
 export DISPLAY=:0.0
 
 cd ~/coriolis-2.x/src/coriolis
+#for fedora 40 edit ~/coriolis-2.x/src/alliance/alliance/src/scr/src/LoadDataBase.c
+line 366, replace the for loop:
+for (ptphSeg_dejavu = ptCell->ALLOW;
+           ptphSeg_dejavu && (X1 != ptphSeg_dejavu->X1);
+           ptphSeg_dejavu = ptphSeg_dejavu->NEXT);
+
+with 
+for (Segment *ptphSeg_dejavu = ptCell->ALLOW;
+    	   ptphSeg_dejavu && (X1 != ptphSeg_dejavu->X1);
+    	   ptphSeg_dejavu = ptphSeg_dejavu->NEXT)
+
 #run the shell script
 ./shell
 
 
 
 #6##alliance install 
+cd ~
 mkdir -p alliance/build alliance/install
 cd ~/alliance
 git clone https://gitlab.lip6.fr/vlsi-eda/alliance.git
