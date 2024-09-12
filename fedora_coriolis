@@ -15,11 +15,11 @@ sudo yum install -y git cmake bison flex gcc-c++ libstdc++-devel  \
                               qt-devel doxygen automake libXpm-devel\
 #2#QWT packages
 sudo  yum install -y qt5-qtbase-devel qt5-qtsvg-devel              # Qt 5.
-sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-doc-6.1.2-4.fc23.noarch.rpm\
-https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-6.1.2-4.fc23.x86_64.rpm\
-https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-devel-6.1.2-4.fc23.x86_64.rpm\
-https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-devel-6.1.2-4.fc23.x86_64.rpm\
-https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-6.1.2-4.fc23.x86_64.rpm\
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-doc-6.1.2-4.fc23.noarch.rpm
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-6.1.2-4.fc23.x86_64.rpm
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-devel-6.1.2-4.fc23.x86_64.rpm
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-devel-6.1.2-4.fc23.x86_64.rpm
+sudo yum install -y https://ftp.lip6.fr/pub/linux/distributions/slsoc/soc/7/addons/x86_64/RPMS/qwt-qt5-6.1.2-4.fc23.x86_64.rpm
 
 
 #3#RAPIDJSON
@@ -42,7 +42,7 @@ cd ~/coriolis-2.x/src
 git clone https://github.com/Coloquinte/Coriolis.git
 git clone https://github.com/lip6/alliance.git
 git clone https://github.com/lip6/alliance-check-toolkit.git
-yum install alliance alliance-libs alliance-doc
+sudo yum install alliance alliance-libs alliance-doc
 export PATH=/usr/lib/ccache:"$PATH"
 export DISPLAY=:0.0
 
