@@ -61,8 +61,13 @@ for (Segment *ptphSeg_dejavu = ptCell->ALLOW;
 #run the shell script
 ./shell
 
+mkdir alliance
+cp -r ~/coriolis-2.x/Linux.SL7_64/Release.Shared/install ~/alliance
+#run the single_command.py attached
 
 
+
+#ignore part 6
 #6##alliance install 
 cd ~
 mkdir -p alliance/build alliance/install
