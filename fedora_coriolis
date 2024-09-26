@@ -97,7 +97,7 @@ Then, build the tool:
 .. code-block:: bash
 
 
-   ego@home:coriolis$ sed -i '1i#include <algorithm>\n ~/coriolis-2.x/src/coriolis/subprojects/coloquinte/src/place_detailed/tetris_legalizer.cpp
+   ego@home:coriolis$ sed -i '1i#include <algorithm>\n' ~/coriolis-2.x/src/coriolis/subprojects/coloquinte/src/place_detailed/tetris_legalizer.cpp
    ego@home:coriolis$ make install
 
 Coriolis gets installed at the root of the following tree: ::
