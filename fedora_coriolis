@@ -81,7 +81,10 @@ of the user currently building it. Thus first step is to get a clone of
 the repository in the right place. Proceed as follow:
 
 .. code-block:: bash
-
+   ego@home:~$ sudo dnf install rapidjson-devel
+   ego@home:~$ sudo dnf install eigen3-devel
+   ego@home:~$ sudo dnf install meson
+   ego@home:~$ pip3 install pdm
    ego@home:~$ mkdir -p ~/coriolis-2.x/src/
    ego@home:~$ cd ~/coriolis-2.x/src
    ego@home:src$ git clone --recurse-submodules https://github.com/lip6/coriolis
