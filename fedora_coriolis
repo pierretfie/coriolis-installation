@@ -80,7 +80,9 @@ The build system relies on a fixed directory tree from the root
 of the user currently building it. Thus first step is to get a clone of
 the repository in the right place. Proceed as follow:
 
-.. code-block:: bash
+.. code-block:: bash  
+
+
    ego@home:~$ sudo dnf install rapidjson-devel
    ego@home:~$ sudo dnf install eigen3-devel
    ego@home:~$ sudo dnf install meson
