@@ -99,6 +99,18 @@ Then, build the tool:
 
    ego@home:coriolis$ sed -i '1i#include <algorithm>\n' ~/coriolis-2.x/src/coriolis/subprojects/coloquinte/src/place_detailed/tetris_legalizer.cpp
    ego@home:coriolis$ make install
+   ego@home:pip3 install dist/*.whl
+   ego@home:pdm plugin update
+   ego@home:pdm sync -d --no-self
+
+root required
+
+.. code-block:: bash  
+
+   ego@home:pdm run meson setup builddir
+   ego@home:pdm run ninja -C builddir install
+
+
 
 Coriolis gets installed at the root of the following tree: ::
 
