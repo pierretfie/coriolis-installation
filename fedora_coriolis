@@ -125,6 +125,8 @@ Initialize pdm environment
 
    ego@home:pdm init
    ego@home:pdm install
+   ego@home:source ~/coriolis-2.x/Linux.SL7_64/Release.Shared/.venv/bin/activate
+
 
 Test if installation is successfull
 
