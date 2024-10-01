@@ -119,6 +119,7 @@ Coriolis gets installed at the root of the following tree: ::
 initialize pdm environment
 
 .. code-block::bash
+
 ego@home:pdm init
 ego@home:pdm install
 
