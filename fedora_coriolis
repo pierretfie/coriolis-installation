@@ -120,13 +120,14 @@ initialize pdm environment
 
 .. code-block:: bash
 
-ego@home:pdm init
-ego@home:pdm install
+   ego@home:pdm init
+   ego@home:pdm install
 
 Test if installation is successfull
 
 .. code-block:: bash
-pdm run ~/coriolis-2.x/src/coriolis/unittests/python/test_hurricane.py
+
+   pdm run ~/coriolis-2.x/src/coriolis/unittests/python/test_hurricane.py
 
 
 
