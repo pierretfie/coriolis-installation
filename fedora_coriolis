@@ -116,6 +116,19 @@ Coriolis gets installed at the root of the following tree: ::
 
     ~/coriolis-2.x/OS.DISTRIB/Release.Shared/install/
 
+initialize pdm environment
+
+.. code-block::bash
+ego@home:pdm init
+ego@home:pdm install
+
+Test if installation is successfull
+
+.. code-block::bash
+pdm run ~/coriolis-2.x/src/coriolis/unittests/python/test_hurricane.py
+
+
+
 Where ``OS`` is the name of your operating system and ``DISTRIB`` your
 distribution (mileage may vary).
 
