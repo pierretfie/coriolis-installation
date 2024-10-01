@@ -116,7 +116,10 @@ Coriolis gets installed at the root of the following tree: ::
 
     ~/coriolis-2.x/OS.DISTRIB/Release.Shared/install/
 
-initialize pdm environment
+Where ``OS`` is the name of your operating system and ``DISTRIB`` your
+distribution (mileage may vary).
+
+Initialize pdm environment
 
 .. code-block:: bash
 
@@ -131,8 +134,7 @@ Test if installation is successfull
 
 
 
-Where ``OS`` is the name of your operating system and ``DISTRIB`` your
-distribution (mileage may vary).
+
 
 
 Using Coriolis
