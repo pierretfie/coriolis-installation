@@ -89,6 +89,8 @@ the repository in the right place. Proceed as follow:
    ego@home:~$ pip3 install pdm
    ego@home:~$ mkdir -p ~/coriolis-2.x/src/
    ego@home:~$ cd ~/coriolis-2.x/src
+   ego@home:src$ git clone https://github.com/Coloquinte/Coriolis.git
+   ego@home:src$ mv Coriolis coriolis
    ego@home:src$ git clone --recurse-submodules https://github.com/lip6/coriolis
    ego@home:src$ cd coriolis
 
